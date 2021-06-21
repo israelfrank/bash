@@ -5,7 +5,7 @@
 # Push the current branch to origin, set upstream, open the PR page if possible.
 gpr() {
 
-    git checkout PR1  || git checkout -b PR1
+    git checkout david  || git checkout -b david
     # Get the current branch name, or use 'HEAD' if we cannot get it.
     branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
     
