@@ -7,8 +7,8 @@ gpr() {
 
     git checkout PR1  || git checkout -b PR1
     # Get the current branch name, or use 'HEAD' if we cannot get it.
-    branch = git branch
-    echo branch
+    branch = 'git branch'
+    echo $branch
     # Pushing take a little while, so let the user know we're working.
     git add .
     git commit -m "ddaasd"
