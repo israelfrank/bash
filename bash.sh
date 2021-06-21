@@ -17,6 +17,9 @@ gpr() {
 
     pr_url=https://github.com/israelfrank/bash/compare/$branch
 
+    open $pr_url
+
+
 }
 
 gpr
