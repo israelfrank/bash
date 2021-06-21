@@ -15,7 +15,7 @@ gpr() {
     # Push to origin, grabbing the output but then echoing it back.
     push_output=`git push origin -u ${branch} 2>&1`
 
-    pr_url=https://$repository_url/compare/$master...$branch
+    pr_url=https://$repository_url/compare/main...$branch
 
     echo ""
     echo ${push_output}
