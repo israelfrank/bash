@@ -16,11 +16,17 @@ gpr() {
     # Push to origin, grabbing the output but then echoing it back.
     push_output=`git push origin -u ${branch} 2>&1`
 
-    git pull-request -m "llllll"
     #  pr_url=https://github.com/israelfrank/bash/compare/main...$branch
 
-open $pr_url
+# open $pr_url
 
 }
 
 gpr
+
+git pr "Remove js console error"
+
+ pr = "!f(){ \
+        hub pull-request -m \"$1\" -b staging -h `git rev-parse --abbrev-ref HEAD` -l \"Please Review\"; \
+        hub pull-request -m \"$1\" -b develop -h `git rev-parse --abbrev-ref HEAD` -l \"Waiting for validation\"; \
+    }; f"
