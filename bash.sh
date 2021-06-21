@@ -13,7 +13,8 @@ gpr() {
 
     # Pushing take a little while, so let the user know we're working.
     echo "Opening pull request for ${GREEN}${branch}${RESET}..."
-
+    git add .
+    git commit -m "ddaasd"
     # Push to origin, grabbing the output but then echoing it back.
     push_output=`git push origin -u ${branch} 2>&1`
     echo ""
