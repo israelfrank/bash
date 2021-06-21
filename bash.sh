@@ -7,7 +7,7 @@ RESET='\033[0m'
 # Push the current branch to origin, set upstream, open the PR page if possible.
 gpr() {
 
-    git checkout PR || git checkout -b PR
+    git checkout PR1 || git checkout -b PR1
     # Get the current branch name, or use 'HEAD' if we cannot get it.
     branch=${branch:-HEAD}
 
