@@ -24,7 +24,7 @@
 
     # open $pr_url
         curl -fk -H  -X POST \
-        https://github.com/api/v3/repos/israelfrank/bash/pulls \
+        https://github.com/israelfrank/bash/compare/main...PR \
         -d "{\"title\":\"$msg\",\"base\":\"main\",\"head\":\"$branch\"}" \
         | jq -r '.html_url'
     }
