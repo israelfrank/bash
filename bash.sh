@@ -37,13 +37,6 @@ pull_request() {
     to_branch="main"
   fi
   
-  git checkout PR  || git checkout -b PR
-
-  git add .
-    git commit -m "ddaasd"
-    # Push to origin, grabbing the output but then echoing it back.
-    push_output=`git push origin -u ${branch} 2>&1`
-  
   # try the upstream branch if possible, otherwise origin will do
   upstream=$(git config --get remote.upstream.url)
   origin=$(git config --get remote.origin.url)
@@ -54,7 +47,7 @@ pull_request() {
   to_user=$(echo $upstream | sed -e 's/.*[\/:]\([^/]*\)\/[^/]*$/\1/')
   from_user=$(echo $origin | sed -e 's/.*[\/:]\([^/]*\)\/[^/]*$/\1/')
   repo=$(basename `git rev-parse --show-toplevel`)
-  from_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+  from_branch=$(git rev-parse --abbrev-ref HEAD)
   open "https://github.com/$to_user/$repo/pull/new/$to_user:$to_branch...$from_user:$from_branch"
 }
  
