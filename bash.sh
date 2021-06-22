@@ -23,10 +23,8 @@
     #   pr_url=https://github.com/israelfrank/bash/compare/main...$branch
 
     # open $pr_url
-       curl \
-        -H "Accept: application/vnd.github.v3+json" \
-        https://api.github.com/repos/octocat/israelfrank/bash \
-        -d '{"title":"title"}'
+       curl -d '{"title":"PR","base":"main", "head":"PR:main"}' https://api.github.com/repos/repo-owner/repo-name/pulls
+
     }
 
     gpr
