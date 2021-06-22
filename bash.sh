@@ -23,7 +23,7 @@
     #   pr_url=https://github.com/israelfrank/bash/compare/main...$branch
 
     # open $pr_url
-       curl -d '{"title":"PR","base":"main", "head":"PR:main"}' https://api.github.com/repos/repo-owner/repo-name/pulls
+       curl -d -H "Authorization: token $GH-T" '{"title":"PR","base":"main", "head":"PR:main"}' https://api.github.com/repos/repo-owner/repo-name/pulls
 
     }
 
