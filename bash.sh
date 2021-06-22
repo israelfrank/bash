@@ -23,8 +23,9 @@
     #   pr_url=https://github.com/israelfrank/bash/compare/main...$branch
 
     # open $pr_url
-        curl -fk -H  -X POST \
-        https://github.com/israelfrank/bash/compare/main...PR \
+       curl \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/repos/octocat/israelfrank/bash \
         -d "{\"title\":\"$msg\",\"base\":\"main\",\"head\":\"$branch\"}" \
         | jq -r '.html_url'
     }
