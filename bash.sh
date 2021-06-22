@@ -26,8 +26,7 @@
        curl \
         -H "Accept: application/vnd.github.v3+json" \
         https://api.github.com/repos/octocat/israelfrank/bash \
-        -d "{\"title\":\"$msg\",\"base\":\"main\",\"head\":\"$branch\"}" \
-        | jq -r '.html_url'
+    
     }
 
     gpr
