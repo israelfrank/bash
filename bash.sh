@@ -5,6 +5,7 @@
 # Push the current branch to origin, set upstream, open the PR page if possible.
  gpr() {
 
+Token = GH-T
     #  git checkout -b PR-"$JOB_NAME/$BUILD_NUMBER"
     #  git checkout -b PR
 #     # Get the current branch name, or use 'HEAD' if we cannot get it.
@@ -23,7 +24,7 @@
     #   pr_url=https://github.com/israelfrank/bash/compare/main...$branch
 
     # open $pr_url
-       curl -d -H "Authorization: token $GH-T" '{"title":"PR","base":"main", "head":"PR:main"}' https://api.github.com/repos/repo-owner/repo-name/pulls
+       curl -d -H "Authorization: token $Token" '{"title":"PR","base":"main", "head":"PR:main"}' https://api.github.com/repos/repo-owner/repo-name/pulls
 
     }
 
